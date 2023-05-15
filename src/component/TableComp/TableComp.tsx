@@ -1,24 +1,26 @@
 import { useContext } from "react";
 import HealthDataContext from "../../context/health-data-context";
 import styless from './TableComp.module.scss';
-import { EDIT, VIEW, stateType } from "../../store/store-types";
+import { stateType } from "../../store/store-types";
+import { useNavigate } from "react-router-dom";
 const TableComp = () => {
 
-  
+  const navigate =useNavigate();
 
-    const {users, changeView, changeUserData} = useContext(HealthDataContext);
-    // console.log('healtContex users',users);
+    const {users,  changeUserData} = useContext(HealthDataContext);
+    
 
     const onEdit = (userDATA: stateType) => {
-        // console.log('userData edit', userDATA);
-        changeView(EDIT);
+        
         changeUserData(userDATA, false);
+        navigate('/edit')
     }
 
     const onView = (userDATA: stateType) => {
         console.table(userDATA)
-        changeView(VIEW);
+        
         changeUserData(userDATA, false);
+        navigate('/view')
     }
 
     const tBodyRow = users.map(user => {
@@ -32,6 +34,8 @@ const TableComp = () => {
         <td className={styless['td']}> { user.PR.value}</td>
         <td className={styless['td']}> { user.SR.value}</td>
         <td className={styless['td']}>
+
+           
 
             <button onClick={() => onEdit(user)}>Edit</button>
         </td>

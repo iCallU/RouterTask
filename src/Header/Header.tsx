@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -8,16 +8,10 @@ const Header = () => {
         </h1>
          <ul>
         <li>
-            <a href="/">Home</a>    
+            <Link to ="/home">Home</Link>    
         </li>
         <li>
-            <a href="/main">Main</a>    
-        </li>
-        <li>
-            <a href="/Edit"> Edit </a>    
-        </li>
-        <li>
-            <a href="/View"> View </a>    
+            <Link to ="/show"> ShowData </Link>    
         </li>
         
        </ul> 
