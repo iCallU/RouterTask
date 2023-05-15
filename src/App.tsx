@@ -16,7 +16,7 @@ import ViewHealthData from './component/ViewHealthData/ViewHealthData';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />
+    element: <HomePage /> 
   },
   {
     path: '/main',
@@ -24,11 +24,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/Edit',
-    element: <EditHealthData/>
+    element: <EditHealthData/> 
   },
   {
     path: '/View',
-    element: <ViewHealthData/>
+    element: <ViewHealthData/> 
   },
 ]);
 
